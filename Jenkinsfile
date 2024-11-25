@@ -1,17 +1,21 @@
-pipeline{
-	agent any
-	
+pipeline {
+    agent any
 
-		stages{
+    stages {
+        stage('Clone Repository') {
+            steps {
+                script {
+                    sh 'git clone https://github.com/bhavinprasad/demo_que.git'
+                }
+            }
+        }
 
-			stage('first'){
-
-					sh ' git clone https://github.com/bhavinprasad/demo_que.git'
-				}
-			stage ('second'){
-
-				sh 'python abc.py'
-}
-
-}
+        stage('Run Python Script') {
+            steps {
+                script {
+                    sh 'python abc.py'
+                }
+            }
+        }
+    }
 }
