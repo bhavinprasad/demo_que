@@ -42,7 +42,7 @@ stage('Build Docker Image') {
             withCredentials([usernamePassword(credentialsId: '101', usernameVariable: 'bhavinprasad', passwordVariable: 'Password@1')]) {
               sh """
               docker login -u "bhavinprasad" -p "Password@1"
-              docker push demo_que1:1.0
+              docker push bhavinprasad/demo_que1:1.0
               """
 
             }
