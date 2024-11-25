@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        cleanWs()
+       
         stage('Clone Repository') {
             steps {
+                 cleanWs()
                 script {
                     // Clone the GitHub repository
                     sh 'git clone https://github.com/bhavinprasad/demo_que.git'
