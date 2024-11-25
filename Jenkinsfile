@@ -27,7 +27,7 @@ stage('Build Docker Image') {
       steps {
         script {
           try {
-            docker.build("DEMO_QUE:1.0")
+            docker.build("demo_que1:1.0")
           } catch (Exception e) {
             echo "failed to clone the repo ${e.message}"
             error "failed to clone"
@@ -42,7 +42,7 @@ stage('Build Docker Image') {
             withCredentials([usernamePassword(credentialsId: '101', usernameVariable: 'bhavinprasad', passwordVariable: 'Password@1')]) {
               sh """
               docker login -u "bhavinprasad" -p "Password@1"
-              docker push DEMO_QUE:1.0
+              docker push demo_que1:1.0
               """
 
             }
