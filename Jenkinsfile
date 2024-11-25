@@ -1,6 +1,6 @@
 pipeline{
 	agent any
-	environment{
+	
 
 		stages{
 
@@ -12,6 +12,6 @@ pipeline{
 
 				sh 'python abc.py'
 }
-}
+
 }
 }
