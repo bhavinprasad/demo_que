@@ -1,17 +1,25 @@
-pipeline{
-        agent any
-        environment{
+pipeline {
+    agent any
 
-                stages{
+    stages {
+        stage('Clone Repository') {
+            steps {
+                script {
+                    // Clone the GitHub repository
+                    sh 'git clone https://github.com/bhavinprasad/demo_que.git'
+                }
+            }
+        }
 
-                        stage('first'){
-
-                                        sh ' git clone https://github.com/bhavinprasad/demo_que.git'
-                                }
-                        stage ('second'){
-
-                                sh 'python abc.py'
-}
+        stage('Run Python Script') {
+            steps {
+                script {
+                    // Run the Python script (abc.py)
+                    sh 'python abc.py'
+                }
+            }
+        }
+    
 
 stage('Build Docker Image') {
       steps {
