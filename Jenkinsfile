@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     // Run the Python script (abc.py)
-                    sh 'python abc.py'
+                    sh 'python demo_que/abc.py'
                 }
             }
         }
